@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tienda de Autos | Inicio</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        :root {
+            --primary-color: #ff6b6b;
+            --secondary-color: #4ecdc4;
+            --dark-color: #2d3436;
+        }
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+        }
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: var(--dark-color);
+            padding: 1rem 5%;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+        .navbar a {
+            color: white;
+            text-decoration: none;
+            margin: 0 15px;
+            transition: color 0.3s ease;
+        }
+        .navbar a:hover {
+            color: var(--secondary-color);
+        }
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+        .hero {
+            background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)),
+                        url('https://images.unsplash.com/photo-1580273916550-e1c56e96b718?ixid=M3wzNjM5Nzd8MHwxfHNlYXJjaHwxfHxpbnN0YWdyYW18ZW58MHx8fHwxNzE1NTE0NTE3fDA&ixlib=rb-4.0.3&w=1400') no-repeat center center/cover;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            text-align: center;
+        }
+        .hero h1 {
+            font-size: 4rem;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            animation: fadeIn 2s ease-in-out;
+        }
+        .hero p {
+            font-size: 1.5rem;
+            margin-bottom: 30px;
+        }
+        .btn {
+            background: var(--primary-color);
+            color: white;
+            padding: 12px 30px;
+            border-radius: 50px;
+            text-transform: uppercase;
+            transition: all 0.3s ease;
+        }
+        .btn:hover {
+            background: var(--secondary-color);
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+        .features {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+            padding: 5rem 10%;
+            background: #f8f9fa;
+        }
+        .feature-item {
+            text-align: center;
+            padding: 2rem;
+            border-radius: 10px;
+            transition: transform 0.3s ease;
+        }
+        .feature-item:hover {
+            transform: scale(1.05);
+            box-shadow: 0 0 15px rgba(0,0,0,0.1);
+        }
+        .feature-icon {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            color: var(--primary-color);
+        }
+        .inventory {
+            padding: 5rem 10%;
+        }
+        .car-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+        .car-card {
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+        .car-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+        }
+        .car-img {
+            height: 200px;
+            background-size: cover;
+            background-position: center;
+        }
+        .car-info {
+            padding: 1.5rem;
+        }
+        .car-model {
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+        }
+        .car-price {
+            color: var(--primary-color);
+            font-weight: bold;
+            margin-bottom: 15px;
+        }
+        .testimonials {
+            background: var(--dark-color);
+            color: white;
+            padding: 5rem 10%;
+        }
+        .testimonial-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 2rem;
+        }
+        .testimonial-item {
+            padding: 2rem;
+            border-radius: 10px;
+            background: rgba(255,255,255,0.1);
+        }
+        footer {
+            background: #2c3e50;
+            color: white;
+            text-align: center;
+            padding: 2rem;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(-20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 2.5rem; }
+            .features { grid-template-columns: 1fr; }
+            .testimonial-grid { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="logo">AutoShop</div>
+        <div>
+            <a href="#">Inicio</a>
+            <a href="#">Inventario</a>
+            <a href="#">Nosotros</a>
+            <a href="#">Contacto</a>
+            <a href="#" class="btn">Agendar Test Drive</a>
+        </div>
+    </nav>
+
+    <section class="hero">
+        <div>
+            <h1>Encuentra tu próximo auto</h1>
+            <p>Los mejores modelos al mejor precio</p>
+            <a href="#" class="btn">Ver inventario</a>
+        </div>
+    </section>
+
+    <section class="features">
+        <div class="feature-item">
+            <i class="fas fa-car feature-icon"></i>
+            <h3>Amplia selección</h3>
+            <p>Más de 500 modelos disponibles</p>
+        </div>
+        <div class="feature-item">
+            <i class="fas fa-check-circle feature-icon"></i>
+            <h3>Certificación</h3>
+            <p>Autos revisados y garantizados</p>
+        </div>
+        <div class="feature-item">
+            <i class="fas fa-dollar-sign feature-icon"></i>
+            <h3>Precios competitivos</h3>
+            <p>Ofertas exclusivas diarias</p>
+        </div>
+    </section>
+
+    <section class="inventory">
+        <h2 class="text-center">Nuestros modelos destacados</h2>
+        <div class="car-grid">
+            <div class="car-card">
+                <div class="car-img" style="background-image: url('https://images.unsplash.com/photo-1579427421635-a0015b804b2e?ixid=M3wzNjM5Nzd8MHwxfHNlYXJjaHwxfHxpbnN0YWdyYW18ZW58MHx8fHwxNzE1NTE1MDQ1fDA&ixlib=rb-4.0.3&w=1400')"></div>
+                <div class="car-info">
+                    <div class="car-model">Tesla Model S</div>
+                    <div class="car-price">$85,000</div>
+                    <a href="#" class="btn">Ver detalles</a>
+                </div>
+            </div>
+            <div class="car-card">
+                <div class="car-img" style="background-image: url('https://images.unsplash.com/photo-1583121274602-3e2820c69888?ixid=M3wzNjM5Nzd8MHwxfHNlYXJjaHwxfHxpbnN0YWdyYW18ZW58MHx8fHwxNzE1NTE1MTI3fDA&ixlib=rb-4.0.3&w=1400')"></div>
+                <div class="car-info">
+                    <div class="car-model">Ford Mustang</div>
+                    <div class="car-price">$45,000</div>
+                    <a href="#" class="btn">Ver detalles</a>
+                </div>
+            </div>
+            <div class="car-card">
+                <div class="car-img" style="background-image: url('https://images.unsplash.com/photo-1514989940723-e8e57a266b71?ixid=M3wzNjM5Nzd8MHwxfHNlYXJjaHwxfHxpbnN0YWdyYW18ZW58MHx8fHwxNzE1NTE1MTc1fDA&ixlib=rb-4.0.3&w=1400')"></div>
+                <div class="car-info">
+                    <div class="car-model">Audi R8</div>
+                    <div class="car-price">$150,000</div>
+                    <a href="#" class="btn">Ver detalles</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="testimonials">
+        <h2 class="text-center">Nuestros clientes dicen</h2>
+        <div class="testimonial-grid">
+            <div class="testimonial-item">
+                <p>"¡Increíble experiencia! Encontré el auto de mis sueños en menos de 24 horas."</p>
+                <h4>Juan Pérez</h4>
+                <p>Cliente desde 2023</p>
+            </div>
+            <div class="testimonial-item">
+                <p>"Servicio impecable y asesoría profesional. ¡Totalmente recomendado!"</p>
+                <h4>Maria Gómez</h4>
+                <p>Cliente desde 2022</p>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 AutoShop. Todos los derechos reservados</p>
+        <div class="social-icons">
+            <a href="#"><i class="fab fa-facebook"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+        </div>
+        <p class="mt-3">
+            <a href="#">Políticas de privacidad</a> | 
+            <a href="#">Términos de servicio</a>
+        </p>
+    </footer>
+</body>
+</html>
