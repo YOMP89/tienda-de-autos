@@ -1,6 +1,6 @@
 # Proyecto: Landing Page Tienda de Autos 🚗
 
-![Proyecto])proyecto.jpg)
+![Proyecto](proyecto.jpg)
 
 ## Descripción General
 Landing page responsive diseñada para una concesionaria de automóviles, enfocada en:
